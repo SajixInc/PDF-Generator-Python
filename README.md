@@ -103,6 +103,13 @@ except OSError:
 
 ### Rendering Response Data to HTML
    <img src="https://user-images.githubusercontent.com/101717156/218707597-505bffe6-f8f5-4f30-a918-c3c56b72ec62.png" width="800" height="200">
+   
+##### html 
+
+The html on django templates
+    
+<img src="https://user-images.githubusercontent.com/101717156/218719635-0b7672df-8ae4-4c12-9f36-008a8b9db03c.png" width="200" height="300">
+
 
 ### Using Matplotlib
 
@@ -125,6 +132,32 @@ Matplotlib pie charts are used to display data in a circular graph, where the si
 <p align="center">
 <img src="https://user-images.githubusercontent.com/101717156/218713288-58db141b-d72f-4517-a958-8b96c80c8854.png" margin_left="100">
 </p>
+
+### output pdf
+
+where the user can input their information on pdf:
+  
+  - Profile Information
+
+  - Lifestyle scoring 
+
+  - Vitals and Anthropometrics 
+
+  - Immunization 
+
+  - Appointments 
+  
+from apis response and they can save it as a new PDF file with their information included in the document. using all above software tools 
+
+<table>
+
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/101717156/218724354-61db0547-e950-4b9d-858d-95dce1c886e0.png" width=410 height=480></td>
+    <td><img src="https://user-images.githubusercontent.com/101717156/218724920-eed8c491-9847-4d16-a0b4-01ddc79af736.png" width=410 height=480></td>
+  </tr>
+ </table>
+  
+
 
 Common errors:
 
