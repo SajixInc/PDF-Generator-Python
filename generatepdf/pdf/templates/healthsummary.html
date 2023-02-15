@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset ="UTF-8" name="viewport" content="text/html, initial-scale=1" http-equiv="Content-Type">
+    <title>Lifeeazy-Health Summary</title>
+    <style type = "text/css">
+
+        .main-container{
+           background-color:#71B5DA;
+
+        }
+        .profile{
+        font-family:Roboto;
+        font-size:19px;
+        color:#ffffff;
+        }
+        span{
+           color:black
+        }
+        hr {
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-top: 1em 0;
+    margin-left:3px;
+    padding-left: 10px;
+    }
+.flexrow{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.flexrow > div {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  margin-right: 11%;
+  border: 1px ;
+}
+.flexrow > div:last-child {
+  margin-right: 0;
+}
+.vitals{
+    font-size:19px;
+    padding-top:0px;
+}
+.styled-table {
+    border-collapse: collapse;
+    margin: 5px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+<!--    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);-->
+}
+td{
+    text-align: center;
+    padding: 6px;
+}
+th{
+    color: #71B5DA;
+    font-size: 17px;
+}
+table {
+<!--  border-collapse: collapse;-->
+  width: 100%;
+
+}
+th, td {
+  padding: 0.2rem;
+  text-align: center;
+<!--  border: 0px solid #ccc;-->
+}
+.tittles{
+    color:#71B5DA;
+    margin-left:13px;
+}
+.rectangle {
+  padding: 3px;
+  height: auto;
+  width: 390px;
+  background-color: linear;
+  border:1px solid #ccc;
+  border-radius: 7px;
+}
+.interpretation{
+    text-align:center;
+    font-size: 15px;
+    color: #71B5DA;
+}
+.sizes{
+    font-size:12px;
+    font-family:verdana;
+    line-height:1.5;
+}
+.names{
+    font-family: verdana;
+    font-size: 14px;
+    font-weight:400;
+    line-height: 1.5;
+    color: white;
+}
+.values{
+    font-family: verdana;
+    font-size: 14px;
+    color: white;
+    line-height: 1.5;
+    font-weight: 300;
+}
+.rectangle2{
+  padding: 3px;
+  height: auto;
+  width: 390px;
+  background-color: linear;
+  border:1px solid #ccc;
+  border-radius: 7px;
+  padding-bottom:11px;
+
+}
+h2 {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #839696;
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+   font-size:12px;
+}
+
+h2 span {
+    background:#fff;
+    padding:0 10px;
+    color: #71B5DA;
+}
+.vitanthe{
+    font-size:14px;
+    color: #71B5DA;
+    font-weight:Bold;
+    font-family: verdana;
+}
+.vitantnames{
+    font-size:14px;
+    font-weight: bold;
+    font-family:verdana;
+    color: #71B5DA;
+}
+.vitantvalues{
+    font-size:14px;
+    color: black;
+    font-family:verdana;
+    margin-left:10px;
+    font-weight: 200;
+}
+.depression{
+    font-family: verdana;
+    font-size: 14px;
+    color: black;
+    line-height: 1.5;
+    font-weight: 200;
+    margin-left: 7px;
+}
+.depdiahe{
+    font-family: verdana;
+    font-size: 14px;
+    color: #71B5DA;
+    font-weight: bold;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+<!--tbody tr:nth-child(odd) {-->
+<!--  background: grey  ;-->
+<!--}-->
+     </style>
+
+</head>
+
+{% load static %}
+<link rel = "stylesheet" href = "{% static 'img/style.css' %}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body>
+    <div style="break-inside: avoid;page-break-inside: avoid;">
+   <div class = "main-container" style="padding:29px;margin-left:19px;height:auto;">
+       <div class = "flexrow" >
+           <div style="background-color:#ffffff;height:90px;width:auto;">
+               <img src = "https://i.ibb.co/hZJ0kzt/lifeeazy-logo-removebg-preview-3-Copy.png"/>
+           </div>
+           <div >
+       <p style="padding-left:69px;margin-left:69px;" class = "names">Name:     <span class = "values" style="margin-left:10px;font-family:verdana;">{{name}}</span></p>
+       <p style="padding-left:69px;margin-left:69px;" class = "names">Email:     <span class = "values" style="margin-left:10px;">{{email}}</span></p>
+       <p style="padding-left:69px;margin-left:69px;" class = "names">Mobile Number:     <span class = "values" style="margin-left:10px;">{{mobilenumber}}</span></p>
+       <p style="padding-left:69px;margin-left:69px;" class = "names">Gender:     <span class = "values" style="margin-left:10px;">{{profile.Gender}}</span></p>
+<!--       <p class = "profile">DOB:<span style="margin-left:7px;">{{profile.DOB}}</span></p>-->
+<!--       <p class = "profile">Blood Group:<span style="margin-left:7px;">{{profile.BloodGroup}}</span></p>-->
+       <p style="padding-left:69px;margin-left:69px;" class = "names">Martial Status:     <span class = "values" style="margin-left:10px;">{{profile.MartialStatus}}</span></p>
+               </div>
+       </div>
+       <hr/>
+       <div class="flexrow">
+    <div class = "names" style="padding:5px;text-align:center;">DOB<br><span class = "values">{{dob}}</span></div>
+    <div class = "names" style="padding:5px;text-align:center;">BloodGroup<br><span class = "values" >{{profile.BloodGroup}}</span></div>
+    <div class = "names" style="padding:5px;text-align:center;">Height<br><span class = "values" >{{vitals.Height}} cm</span></div>
+    <div class = "names" style="padding:5px;text-align:center;">Weight<br><span class = "values">{{vitals.Weight}} kg</span></div>
+    <div class = "names" style="padding:5px;text-align:center;">BMI<br><span class="values">{{vitals.BMI}} kg/&#13217</span></div>
+  </div>
+   </div>
+    <br/>
+<!--    <div class = "flexrow" style="margin-left:12px;">-->
+<!--        <div>-->
+<!--            <h1>Vitals Sign</h1>-->
+<!--        </div>-->
+<!--        <div style="padding-left:89px;margin-left:89px;">-->
+<!--            <h1>Anthropometrics</h1>-->
+<!--        </div>-->
+<!--    </div>-->
+    {% if dispalayName == "userAssessment" %}
+    <div style="width: 100%;height:auto">
+        <div style="width: 50%; height: 100px; float: left;text-align:center;">
+        <p class = "sizes" style ="color: #71B5DA;margin:23px;font-weight:bold;font-size:15px;">Overall Lifestyle Score: <span style="color:black;font-size:14px;font-weight:200;">{{overall_Score}}</span></p>
+        <img style = "height:310px;width:450px;" src = "{{imageee}}"/>
+        </div>
+
+        <div class = "sizes" style="margin-left: 55%; height: auto;text-align:center;padding-top:1px;padding-top:30px;">
+
+            <div class="rectangle">
+                <h1 class = "interpretation">Individual Scoring Interpretation</h1>
+                <div style="padding-left:8px;">
+                    {% for key, value in overall_list.items %}
+<!--                <p style="text-align:left;color:#71B5DA;font-size:17px;">Connectedness- <span>hgehewgefheghewgdhewgefuuehsjdfhj jehfjehf jnhdjeh jewhej jewhfiewhefiehsifjiksijfiejfiejfiejfiekjfjejfkejfo  </span></p>-->
+                    <p style="text-align:left;color:#71B5DA;font-size:14px;font-weight:bold;">{{key}}- <span class = "values" style="color:black;font-size:14px;font-weight:200; ">{{value}}</span></p>
+<!--                    <p style="text-align:left;color:#71B5DA;font-size:17px;">Connectedness- <span></span></p>-->
+<!--                    <p style="text-align:left;color:#71B5DA;font-size:17px;">Connectedness- <span></span></p>-->
+<!--                    <p style="text-align:left;color:#71B5DA;font-size:17px;">Connectedness- <span></span></p>-->
+                    {% endfor %}
+                    </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+   <div style="width: 100%;height:160px;">
+       <div style="width: 50%; height: auto; float: left;text-align:left;">
+       <p class="depdiahe" style="padding-left:15px;font-weight:bold;">Risk to Depression: <span class="depression">{{depression}}</span></p>
+       <p class="depdiahe" style="padding-left:15px;font-weight:bold">Risk to Diabetes: <span class="depression">{{diabetes}}</span></p>
+       </div>
+       <div class = "sizes" style="margin-left: 55%; height: 130px;text-align:center;padding-top:3px;">
+           <div class="rectangle2">
+               <p style="color:#71B5DA;font-size:14px;font-weight:bold;">Overall Life Style- <span class="values" style="color:black;font-size:14px;font-weight:200;">{{overall_lifestyle}}</span></p>
+           </div>
+       </div>
+   </div>
+
+
+        {% endif %}
+
+        {% if dispalayName == "noAssessment" %}
+        <div style="width: 100%;height:auto;text-align:center;">
+<!--            <h1>ram</h1>-->
+            <img style = "height:220px;width:350px;" src = "{{imageee}}"/>
+            </div>
+         {% endif %}
+
+
+
+                {% if dispalayName == "userNoTakenAssessment" %}
+        <div style="width: 100%;height:auto;">
+<!--            <h1>ram</h1>-->
+            <img style = "height:220px;width:350px;" class="center" src = "{{imageee}}"/>
+            <div style="width: 100%; height: auto;">
+       <p class="depdiahe" style="padding-left:15px;font-weight:bold;">Risk to Depression: <span class="depression">{{depression}}</span></p>
+       <p class="depdiahe" style="padding-left:15px;font-weight:bold">Risk to Diabetes: <span class="depression">{{diabetes}}</span></p>
+       </div>
+            </div>
+         {% endif %}
+
+
+
+
+
+<div>
+  <h2 ><span style="font-size:14px;">Vitals & Anthropometrics</span></h2>
+</div>
+
+        <div style="height:210px;background-color:#ffffff;">
+    <div style="width: 100%;">
+        <div style="width: 50%; height: 100px; float: left;text-align:center;">
+            <h1 style="color:#71B5DA;" class="vitanthe">Vitals Sign</h1>
+            <div style="text-align:left;margin-left:75px;padding-left:75px;">
+            <p class = "vitantnames" >Temperature:     <span class="vitantvalues">{{vitals.Temperature}}</span> &degF</p>
+            <p class = "vitantnames">Blood Pressure:     <span class="vitantvalues">{{vitals.BP}}</span> mmhg</p>
+<!--            <p class = "vitantnames">Height:     <span class="vitantvalues">{{vitals.Height}}</span></p>-->
+<!--            <p class = "vitantnames">Weight:     <span class="vitantvalues">{{vitals.Weight}}</span></p>-->
+<!--            <p class = "vitantnames">BMI:     <span class="vitantvalues">{{vitals.BMI}}</span></p>-->
+            <p class = "vitantnames">Spo2:     <span class="vitantvalues">{{vitals.Spo2}}</span> %</p>
+            <p class = "vitantnames">Pulse:     <span class="vitantvalues">{{vitals.Pulse}}</span> beats per minute</p>
+            <p class = "vitantnames">Diastolic:     <span class="vitantvalues">{{vitals.diastolic}}</span> mmhg</p>
+        </div>
+        </div>
+        <div style="margin-left: 50%; height: 100px;text-align:center;padding-top:1px;">
+            <h1 style="color:#71B5DA;" class ="vitanthe">Anthropometrics</h1>
+            <p class = "vitantnames">Height:     <span class="vitantvalues">{{anthro.Height}}</span> cm</p>
+            <p class = "vitantnames">Weight:     <span class="vitantvalues">{{anthro.Weight}}</span> kg</p>
+<!--            <p class = "vitantnames">Age:     <span class="vitantvalues">{{anthro.Age}}</span></p>-->
+<!--            <p class = "vitantnames">Gender:     <span class="vitantvalues">{{anthro.Gender}}</span></p>-->
+        </div>
+    </div>
+        <br>
+    </div>
+
+
+   <div>
+  <h2><span style="font-size:14px;">Allergies, Immunization & Appointments</span></h2>
+</div>
+
+    <div style="height:100px;margin-top:15px;padding-top:9px;">
+        <table class="styled-table">
+    <thead>
+    <h1 class="vitanthe" style="padding-left:17px;">Allergies</h1>
+        <tr>
+            <th class="vitantnames">Type</th>
+            <th class="vitantnames">Reactions</th>
+            <th class="vitantnames">Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="vitantvalues">{{allergies.AlergiesType}}</td>
+            <td class="vitantvalues">{{allergies.Reactions}}</td>
+            <td class="vitantvalues">{{allergies.Comments}}</td>
+        </tr>
+
+        <!-- and so on... -->
+    </tbody>
+</table>
+    </div>
+
+ <h1 class="vitanthe" style="padding-left:17px;margin-top:35px;">Immunization</h1>
+<div style="height:auto;background-color:#ffffff;margin-top:15px;page-break-before: avoid;">
+    <div style="width: 100%;">
+        <div style="width: 49%; height: 90px; float: left;text-align:left;">
+             <div>
+            <table class="styled-table">
+    <thead>
+<!--    <h1 class="vitanthe" style="padding-left:17px;">Immunization</h1>-->
+        <tr>
+            <th class="vitantnames" style="text-align:left;padding-left:27px;">Immunization Name</th>
+            <th class="vitantnames">Status</th>
+            <th class="vitantnames">Immunization Date</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in immunization1 %}
+
+        <tr>
+
+            <td class="vitantvalues" style="text-align:left;padding-left:27px;">{{i.vaccine}}</td>
+            <td class="vitantvalues">{{i.status}}</td>
+            <td class="vitantvalues">{{i.date}}</td>
+
+        </tr>
+{% endfor %}
+        <!-- and so on... -->
+    </tbody>
+</table>
+    </div>
+
+        </div>
+        <div style="margin-left: 50%;text-align:center;padding:3px;">
+
+             <div>
+            <table class="styled-table">
+<!--                <h1 class="vitanthe" style="padding-left:17px;">Immunization</h1>-->
+    <thead>
+        <tr>
+            <th class="vitantnames" style="text-align:left;padding-left:27px;">Immunization Name</th>
+            <th class="vitantnames">Status</th>
+            <th class="vitantnames">Immunization Date</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for i in immunization2 %}
+        <tr>
+
+            <td class="vitantvalues" style="text-align:left;padding-left:27px;">{{i.vaccine}}</td>
+            <td class="vitantvalues">{{i.status}}</td>
+            <td class="vitantvalues">{{i.date}}</td>
+
+        </tr>
+{% endfor %}
+        <!-- and so on... -->
+    </tbody>
+</table>
+    </div>
+        </div>
+    </div>
+        <br>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <h1 class="vitanthe" style="padding-left:17px;margin-top:35px;">Appointments</h1>
+        <table style="width:100%;height:auto;padding-left:17px;">
+<tr>
+<th class="vitantnames">Date</th>
+<th class="vitantnames">Time</th>
+<th class="vitantnames">Doctor</th>
+<th class="vitantnames">Specialization</th>
+<!--<th class="vitantnames">Status</th>-->
+<!--<th class="vitantnames">Fees</th>-->
+<th class="vitantnames">Symptoms</th>
+</tr>
+     {% for e in appointments %}
+<tr>
+<td class="vitantvalues">{{e.date}}</td>
+<td class="vitantvalues">{{e.time}}</td>
+<td class="vitantvalues">{{e.doctorname}}</td>
+<td class="vitantvalues">{{e.specialization}}</td>
+<!--<td class="vitantvalues">{{e.Status}}</td>-->
+<!--<td class="vitantvalues">{{e.Fees}}</td>-->
+<td class="vitantvalues">{{e.symptoms}}</td>
+</tr>
+    {% endfor %}
+</table>
+    </div>
+    <div style="background-color:#71B5DA;text-align:center;">
+<!--        <p style="color:white;font-size:10px;">We aim to provide accessible, available & affordable online healthcare services to anyone anytime & anywhere log on to website vivifyhealthcare.com or reach us tollfree No 180034567654</p>-->
+        <p style="color:white;font-size:10px;">HealthCharter v1.0.0</p>
+    </div>
+    </div>
+
+
+    </body>
+</html>
