@@ -33,25 +33,25 @@
 
   **Warning!** Version in debian/ubuntu repos have reduced functionality (because it compiled without the wkhtmltopdf QT patches), such as adding outlines,               headers, footers, TOC etc. To use this options you should install static binary from [wkhtmltopdf](http://wkhtmltopdf.org/) site.
         
-  * Windows and other options: check wkhtmltopdf [homepage](http://wkhtmltopdf.org/) for binary installers
+  * Windows and other options: check [wkhtmltopdf homepage](http://wkhtmltopdf.org/) for binary installers
 
-pdfkit Usages
+### use cases
 
 -----
 
-(i) Already Saved HTML page:
+(i) if you have html file already saven on your system:
      
      import pdfkit
 	 
      pdfkit.from_file('test.html', 'out.pdf')
 
-(ii) Conver Website URL:
+(ii) if you are have any website URl; which needs to be converted:
       
       import pdfkit
 	  
       pdfkit.from_url('http://google.com', 'out.pdf')
  
- (iii) Store text in PDF:
+ (iii) if you have series of string in the codes; which needs to be shown in the form of PDF:
       
       import pdfkit
 	 
@@ -132,6 +132,9 @@ Matplotlib pie charts are used to display data in a circular graph, where the si
 <p align="center">
 <img src="https://user-images.githubusercontent.com/101717156/218713288-58db141b-d72f-4517-a958-8b96c80c8854.png" margin_left="100">
 </p>
+
+<img src="https://user-images.githubusercontent.com/101717156/218930326-b88db135-7130-4502-9b4f-03cf9e4ebe9a.png" width="400" height="300">
+
 
 ### output pdf
 
