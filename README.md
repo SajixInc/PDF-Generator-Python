@@ -1,6 +1,6 @@
 <img align="right" width="33%" src="https://vivifyassets.s3.ap-south-1.amazonaws.com/lifeeazy-logo1.png">
 
-# PDF-Genrator-Python using pdfkit
+# PDF-Generator-Python using pdfkit
 
  - pdfkit is a python library that can be used to generate PDF documents from HTML content easily and with automated flow control such as pagination and keeping text   together. It uses wkhtmltopdf as a backend and can be used with Flask or Django to convert HTML to PDF in web applications.
  
@@ -39,13 +39,13 @@
 
 -----
 
-(i) if you have html file already saven on your system:
+(i) if you have html file already saved on your system:
      
      import pdfkit
 	 
      pdfkit.from_file('test.html', 'out.pdf')
 
-(ii) if you are have any website URl; which needs to be converted:
+(ii) if you have any website URl; which needs to be converted:
       
       import pdfkit
 	  
@@ -67,15 +67,19 @@ Each API call takes an optional configuration parameter. This should be an insta
 
 * ``meta_tag_prefix`` - the prefix for ``pdfkit`` specific meta tags - by default this is ``pdfkit-``
 
+### Windows Specific Configuration
+
 Example - for when ``wkhtmltopdf`` is on ``$PATH``:
    
-       path_to_wkhtmltopdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+       path_to_wkhtmltopdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe" 
     
        config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
     
        pdfkit.from_file(html_string, output_file, configuration=config)
      
 <img src="https://user-images.githubusercontent.com/101717156/218657398-6d750c4c-ccdb-4a0b-89e8-e45197d60854.png" width="1200" height="200">
+
+### Linux/Ubuntu Specific Configuration
 
 Example - for when ``wkhtmltopdf`` is not on ``$PATH``:
 
@@ -116,9 +120,9 @@ The html on django templates
 
 Matplotlib pie charts are used to display data in a circular graph, where the size of each slice represents the proportion of the whole. They are commonly used to visualize categorical data and the relative sizes of different categories. Examples of use cases include market share of different products, distribution of budget among different departments, or the breakdown of survey responses by answer choice.
 
-#### here we are used for example 
-   we have five sections and every sections have some scores , based on these scores to drawn a pie chart using matplotlib
-     
+#### sample example 
+   We have five sections and each section have some scores, based on these scores we will draw a pie chart using matplotlib
+   
    - Connectedness 
     
    - Substance 
@@ -138,7 +142,7 @@ Matplotlib pie charts are used to display data in a circular graph, where the si
 
 ### output pdf
 
-where the user can input their information on pdf:
+We will see the information on pdf for the sameple data:
   
   - Profile Information
 
@@ -150,7 +154,7 @@ where the user can input their information on pdf:
 
   - Appointments 
   
-from apis response and they can save it as a new PDF file with their information included in the document. using all above software tools 
+from API's response we can save an create a PDF file. Here is the sample response pdf file created with pdf-generator-python 
 
 <table>
 
