@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>nameofimage</th>
+        <th>photo</th>
+    </tr>
+    {% for display in Image %}
+    <tr>
+        <td>{{display.id}}</td>
+        <td>{{display.nameofimage}}</td>
+        <td><img src='{{display.photo.url}}'></td>
+    </tr>
+     {% endfor %}
+</table>
+</body>
+</html>

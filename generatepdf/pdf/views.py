@@ -14,6 +14,41 @@ from .serializers import PdfGenerationSerializer
 Lifeeazy_Url = 'https://.........'
 token = 'mention your bearer token'
 
+from django.shortcuts import render, redirect
+from .models import Image
+from .form import Imageform 
+from django.contrib import messages
+
+
+def index(request):
+    if request.method == 'POST':
+        form = Imageform(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            output = form.instance
+            return render(request, 'index.html', {'output': output})
+    else:
+        form = Imageform()
+    img = Image.objects.all()
+    return render(request, 'index.html', {'img': img, 'form': form})
+
+
+# def index1(request):
+#     if request.POST.get('nameofimage') and request.POST.get('photo') :
+#         saverecord = Image()
+#         saverecord.id = request.POST.get('nameofimage')
+#         saverecord.firstname = request.POST.get('photo')
+#         saverecord.save()
+#         messages.success(request, 'record inserted successfully')
+#         # return redirect(request,'index.html')
+#     return render(request, 'index.html')
+
+def read(request):
+    a = Image.objects.all()
+    return render(request, 'read.html', {"Image": a})
+
+from .htmltopdfconverter import htmltopdfview
+htmltopdfview()
 
 def getSummary(id):
     summaryapi = Lifeeazy_Url + 'User/GetAllUserSummary/{}'.format(id)
@@ -33,7 +68,9 @@ def getSummary(id):
     return summaryData, assesmentData, immunizationData, overall_immunizations
 
 
-def htmltopdf(html, id):
+html = r"D:\projects\New folder (2)\PDF-Generator-Python\generatepdf\pdf\result.html"
+
+def htmltopdf(self):
     """ for windows
     path_to_file = 'responses.html'
     path_to_wkhtmltopdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
@@ -42,22 +79,22 @@ def htmltopdf(html, id):
     for Ubuntu/Debian
     sudo apt-get install wkhtmltopdf """
 
-    # path_to_wkhtmltopdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
-    # config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
+    path_to_wkhtmltopdf = r"C:\Users\madhu\Downloads\vasu\wkhtmltoimage.exe"
+    config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
 
     now = datetime.now()
     global pdftime, htmlResp
     pdftime = now.strftime("%Y%m%d%H%M%S")
-    htmlResp = f'Lifeeazy-response_{id}_{pdftime}.html'
+    htmlResp = r'D:\projects\New folder (2)\PDF-Generator-Python\generatepdf\pdf\result.html'
     global pdfname
-    pdfname = f'Lifeeazy-HealthSummary_{id}_{pdftime}.pdf'
+    pdfname = f'outpdf.pdf'
     filesss = codecs.open(f'{htmlResp}', "w", "utf-8")
     filesss.write(html)
     filesss.close()
 
-    # pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', configuration=config, options={"enable-local-file-access": ""})
-    pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', options={"enable-local-file-access": ""})
-    global pdfpath
+    pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', configuration=config, options={"enable-local-file-access": ""})
+    # pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', options={"enable-local-file-access": ""})
+    # global pdfpath
     pdfpath = os.path.abspath(pdfname)
 
 

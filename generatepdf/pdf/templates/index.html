@@ -1,0 +1,15 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form method="post" enctype="multipart/form-data">
+        {% csrf_token%}
+        id:<input type="number" name="id"><br><br>
+        Nameofimage:<input type="text" name="nameofimage"><br> <br>
+        <input type="file" name="photo" id="id_logo" required>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
