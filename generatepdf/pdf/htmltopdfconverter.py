@@ -8,7 +8,8 @@ from .models import MyModel
 from rest_framework import generics
 from rest_framework.response import Response
 
-path_to_wkhtmltopdf = r"C:\Users\madhu\Downloads\vasu\wkhtmltopdf.exe"
+path_to_wkhtmltopdf = r"C:\Program Files (x86)\wkhtmltopdf\wkhtmltopdf.exe"   # give path of the wkhtmltopdf for windows#
+
 config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
 
 
