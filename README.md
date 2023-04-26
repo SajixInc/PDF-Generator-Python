@@ -177,6 +177,29 @@ Make sure that you have wkhtmltopdf in your `$PATH` or set via custom configurat
  This error means that PDFKit was unable to process an input. You can try to directly run a command from error message and see what error caused failure (on some 
  wkhtmltopdf versions this can be cause by segmentation faults)
  
+
+# PDF generation via API Endpoint
+API Endpoint for to convert the HTML into PDF files and Storing those files into ``S3bucket`` and ``MongoDB`` database .
+
+    Pre-requisities: s3 bucket, IAM credentials & mongodb  
+
+<h4> Follow the steps to using it as a REST API </h4>
+
+make ensure you are inside the project / cloned repository
+
+- pip install -r .requirements.txt
+- python manage.py makemigrations.py
+- python manage.py migrate
+- python manage.py runserver
+
+After successfully running the local host
+go to ``http://127.0.0.1:8000/pdf/gen/`` this url.
+
+upload your HTML file and then you got response be like this:
+`` {"url":<s3bucket url>}``
+
+
+
  <p align="center">
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/cropped-vivify_login.png" margin_left="100"/>
  </p>

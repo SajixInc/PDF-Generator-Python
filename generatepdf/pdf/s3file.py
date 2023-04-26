@@ -36,7 +36,7 @@
 # b_res = s3.list_buckets()
 # # for i in b_res['Buckets']:
 #         # print(i)
-# with open(r"D:\Madhu\project\Python\PDF-Generator-Python\generatepdf\generatepdf\result.html",'rb') as img:
+# with open(r"C:\Users\anves\Pictures\as.png",'rb') as img:
 #         s3.upload_fileobj(img,b_name,"testfile.jpg")
-# #
+#
 # s3.download_file(b_name,"testfile.jpg  ","download.jpg")
