@@ -1,8 +1,6 @@
 from django.http import HttpResponse, StreamingHttpResponse
 from wsgiref.util import FileWrapper
 from .s3file import *
-
-
 from .serializers import htmltopdfserializer
 import pdfkit
 import os
