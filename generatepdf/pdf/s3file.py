@@ -30,13 +30,13 @@ def upload_file(image_path):
 
 
 
-import boto3
-b_name = "ivin-pro-data-conversion"
-s3 = boto3.client("s3")
-b_res = s3.list_buckets()
-# for i in b_res['Buckets']:
-        # print(i)
-with open(r"C:\Users\anves\Pictures\as.png",'rb') as img:
-        s3.upload_fileobj(img,b_name,"testfile.jpg")
+# import boto3
+# b_name = "ivin-pro-data-conversion"
+# s3 = boto3.client("s3")
+# b_res = s3.list_buckets()
+# # for i in b_res['Buckets']:
+#         # print(i)
+# with open(r"C:\Users\anves\Pictures\as.png",'rb') as img:
+#         s3.upload_fileobj(img,b_name,"testfile.jpg")
 #
 # s3.download_file(b_name,"testfile.jpg  ","download.jpg")
