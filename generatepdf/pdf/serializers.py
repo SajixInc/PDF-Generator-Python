@@ -11,7 +11,7 @@ class htmltopdfserializer(serializers.ModelSerializer):
 
 
 class pdfdownloader(serializers.Serializer):
-    pdf_name = serializers.FileField()
+    pdf_name = serializers.CharField()
     
 
     
