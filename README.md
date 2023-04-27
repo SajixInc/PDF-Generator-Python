@@ -192,6 +192,27 @@ make ensure you are inside the project / cloned repository
 - python manage.py migrate
 - python manage.py runserver
 
+# Settings
+ These settings for accessing the database and S3 bucket into your application
+## S3bucket configuration
+- Here, i communicated with the S3 bucket by an Endpoint which is configured with my s3bucket Client and returned the Pre-signed url.
+
+- There is a file inside the project directory and Named as ``apidetails.py``.
+ -  There you should include the Endpoint and Headers
+ 
+Note: Recommanded to use Endpoint to secure your S3 cerdentials or use this code into your project.
+## DataBase configuration
+- There is a file inside the project directory named as ``settings.py``
+- There is Field DATABASE, you can change it, if you want to use different data base
+```
+DATABASES = {
+     'default': {
+          'ENGINE': 'djongo',
+         'NAME': 'database_name',
+                }
+         }
+```
+
 After successfully running the local host
 go to ``http://127.0.0.1:8000/pdf/gen/`` this url.
 
