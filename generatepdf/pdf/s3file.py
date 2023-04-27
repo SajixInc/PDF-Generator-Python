@@ -1,26 +1,29 @@
 import requests
-#token = "**********"  /API TOKEN/
-import boto3
-def upload_file(image_path):
-   # url = 'https://staging-api.vivifyhealthcare.com/ImageUpload/DocUpload/' /use end point for s3 bucket upload/
-    # url  = "http://127.0.0.1:8008/pdf/gen/"
-    headers =  Imageheaders = {
-        'Accept-Language': 'en-US',
-        'Authorization': f'Bearer {token}'
-    }
-    import PyPDF2
 
-    pdfFileObj = open(image_path, 'rb')
-    # pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-    files = {'UploadDoc': pdfFileObj}
-    response = requests.post(url,files=files,headers=headers)
-    print(response.status_code)
-    imageurl = response.json()['Result']
-   
-    doc = (imageurl.items())
-    for i in doc:
-        url = (i[1])
-        return url
+import boto3
+def upload_file(image_path,url,token):  
+    try: 
+        url = url
+        headers =  Imageheaders = {
+            'Accept-Language': 'en-US',
+            'Authorization': token,
+        }
+        import PyPDF2
+        print(url)
+
+        pdfFileObj = open(image_path, 'rb')
+        # pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+        files = {'UploadDoc': pdfFileObj}
+        response = requests.post(url,files=files,headers=headers)
+        print(response.status_code)
+        imageurl = response.json()['Result']
+    
+        doc = (imageurl.items())
+        for i in doc:
+            url = (i[1])
+            return url
+    except Exception:
+        return "please check your api "
 
     
 # image_path = r"D:\projects\New folder (2)\PDF-Generator-Python\generatepdf\Lifeeazy-HealthSummaryl.pdf"

@@ -4,15 +4,12 @@ from django.conf.urls.static import static
 from .views import *
 from .htmltopdfconverter import *
 
-
     
 
 urlpatterns = [
     path('generation/', Generatepdf.as_view()),
-    path('gen/', htmltopdfview.as_view()),
-    # path('get', downloadfile.as_view()),
-    
-     path('index/',index),
+    path('gen/', htmltopdfview.as_view()),    
+    path('index/',index),
    # path('index1/', index1),
     path('read/',read),
    
