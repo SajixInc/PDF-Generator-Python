@@ -10,6 +10,10 @@ class htmltopdfserializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class pdfdownloader(serializers.Serializer):
+    pdf_name = serializers.FileField()
+    
+
     
 
 class PdfGenerationSerializer(serializers.Serializer):

@@ -1,6 +1,6 @@
-# import requests
-# token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg4OTc4NzY0LCJqdGkiOiJhMWU5ZWE2ODU4Mzc0OWE3YjNiZDFlNjcxN2Q4MDhkNyIsInVzZXJfaWQiOjV9.O9Yyi4lTU8r40pqf8fyjzDLJNbR8S0yUrbRqF0Ww2Mc"
-
+import requests
+token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg4OTc4NzY0LCJqdGkiOiJhMWU5ZWE2ODU4Mzc0OWE3YjNiZDFlNjcxN2Q4MDhkNyIsInVzZXJfaWQiOjV9.O9Yyi4lTU8r40pqf8fyjzDLJNbR8S0yUrbRqF0Ww2Mc"
+import boto3
 # def upload_file(image_path):
 #     url = 'https://staging-api.vivifyhealthcare.com/ImageUpload/DocUpload/'
 #     # url  = "http://127.0.0.1:8008/pdf/gen/"
@@ -40,3 +40,21 @@
 #         s3.upload_fileobj(img,b_name,"testfile.jpg")
 #
 # s3.download_file(b_name,"testfile.jpg  ","download.jpg")
+
+def uploadfile(file):
+    s3 = boto3.client("s3")
+    with open(file,'rb') as f:
+        x=s3.upload_fileobj(f,"ivin-pro-data-conversion",file)
+        print(x)
+        return  x
+    
+
+def downloadfile(file):
+    s3 = boto3.resource('s3')
+    s3.Bucket('ivin-pro-data-conversion').download_file(file, file)
+    return  "Success"
+
+
+# import boto3
+# s3 = boto3.resource('s3')
+# s3.Bucket('ivin-pro-data-conversion').download_file('Madhutest.pdf', 'Madhutest.pdf')
