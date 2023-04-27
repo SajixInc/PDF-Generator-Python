@@ -9,8 +9,8 @@ from .models import MyModel
 from rest_framework import generics
 from rest_framework.response import Response
 
-path_to_wkhtmltopdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"   # give path of the wkhtmltopdf for windows#
-config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
+# path_to_wkhtmltopdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"   # give path of the wkhtmltopdf for windows#
+# config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
 
 
 
@@ -25,37 +25,35 @@ class htmltopdfview(generics.GenericAPIView):
         config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
         for Ubuntu/Debian
         sudo apt-get install wkhtmltopdf """
-        try:
-            htmlfile =  request.FILES['image_url']
-            title = request.data.get('title')
-            description = request.data.get('description')
-            #if filename and details needed to be saved in database uncomment belwo lines# 
-            ## from here
-            a= MyModel()
-            a.title = title 
-            a.description = description
-            a.image_url=htmlfile
-            a.save()
-            id = a.id
-            queryset = MyModel.objects.get(id = id)
-            x = queryset.image_url
-            htmlResp = queryset.image_url
-            print("--------------------------",htmlfile)
-            ## upto here
+        htmlfile =  request.FILES['image_url']
+        title = request.data.get('title')
+        description = request.data.get('description')
+        #if filename and details needed to be saved in database uncomment belwo lines# 
+        ## from here
+        a= MyModel()
+        a.title = title 
+        a.description = description
+        a.image_url=htmlfile
+        a.save()
+        id = a.id
+        queryset = MyModel.objects.get(id = id)
+        x = queryset.image_url
+        htmlResp = queryset.image_url
+        print("--------------------------",htmlfile)
+        ## upto here
 
-            htmlResp = x
-            global pdfname
-            pdfname = f'Madhutest.pdf'
-            pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', configuration=config, options={"enable-local-file-access": ""})
-            # pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', options={"enable-local-file-access": ""})
-            # import base64
-            # with open(pdfname, "rb") as pdf_file:
-            #     encoded_string = base64.b64encode(pdf_file.read())
-            #     print(encoded_string)        
-            x=upload_file(pdfname,url,token)       
-            return Response({"url" :x})
-        except Exception as e:
-             return Response({"error":e})
+        htmlResp = x
+        global pdfname
+        pdfname = f'Madhutest.pdf'
+        # pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', configuration=config, options={"enable-local-file-access": ""})
+        pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', options={"enable-local-file-access": ""})
+        # import base64
+        # with open(pdfname, "rb") as pdf_file:
+        #     encoded_string = base64.b64encode(pdf_file.read())
+        #     print(encoded_string)        
+        x=upload_file(pdfname,url,token)       
+        return Response({"url" :x})
+
 
 class DocumentRE(generics.GenericAPIView):
     serializer_class = htmltopdfserializer
