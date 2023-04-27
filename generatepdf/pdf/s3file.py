@@ -1,8 +1,8 @@
 import requests
-token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg4OTc4NzY0LCJqdGkiOiJhMWU5ZWE2ODU4Mzc0OWE3YjNiZDFlNjcxN2Q4MDhkNyIsInVzZXJfaWQiOjV9.O9Yyi4lTU8r40pqf8fyjzDLJNbR8S0yUrbRqF0Ww2Mc"
+#token = "**********"  /API TOKEN/
 import boto3
 def upload_file(image_path):
-    url = 'https://staging-api.vivifyhealthcare.com/ImageUpload/DocUpload/'
+   # url = 'https://staging-api.vivifyhealthcare.com/ImageUpload/DocUpload/' /use end point for s3 bucket upload/
     # url  = "http://127.0.0.1:8008/pdf/gen/"
     headers =  Imageheaders = {
         'Accept-Language': 'en-US',
