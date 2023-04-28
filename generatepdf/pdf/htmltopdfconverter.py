@@ -21,7 +21,7 @@ class htmltopdfview(generics.GenericAPIView):
         config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
         for Ubuntu/Debian
         sudo apt-get install wkhtmltopdf """
-        # htmlfile =  request.FILES['image_url']
+        htmlfile =  request.FILES['image_url']
         title = request.data.get('htmlfile')
         description = request.data.get('description')
         #if filename and details needed to be saved in database uncomment belwo lines# 
@@ -29,21 +29,21 @@ class htmltopdfview(generics.GenericAPIView):
         a= MyModel()
         a.title = title 
         a.description = description
-        # a.image_url=htmlfile
+        a.image_url=htmlfile
         a.save()
         id = a.id
         queryset = MyModel.objects.get(id = id)
         x = queryset.image_url
-        htmlResp = queryset.image_url
-        # print("--------------------------",htmlfile)
-        ## upto here
+        # htmlResp = queryset.image_url
+        print("--------------------------",htmlfile)
+        # upto here
 
-        # htmlResp = x
-        # global pdfname
-        # pdfname = f'Madhutest.pdf'
-        # pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', configuration=config, options={"enable-local-file-access": ""})
-        # # pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', options={"enable-local-file-access": ""})
-        # import base64
+        htmlResp = x
+        global pdfname
+        pdfname = f'Madhutest.pdf'
+        pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', configuration=config, options={"enable-local-file-access": ""})
+        # pdfkit.from_file(open(f'{htmlResp}'), output_path=f'{pdfname}', options={"enable-local-file-access": ""})
+        import base64
         # with open(pdfname, "rb") as pdf_file:
         #     encoded_string = base64.b64encode(pdf_file.read())
         #     print(encoded_string)        
