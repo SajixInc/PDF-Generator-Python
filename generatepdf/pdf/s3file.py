@@ -1,9 +1,9 @@
 import requests
-token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg4OTc4NzY0LCJqdGkiOiJhMWU5ZWE2ODU4Mzc0OWE3YjNiZDFlNjcxN2Q4MDhkNyIsInVzZXJfaWQiOjV9.O9Yyi4lTU8r40pqf8fyjzDLJNbR8S0yUrbRqF0Ww2Mc"
+token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiIzMTFkMWZlOC1lZDQwLTQ2ZDYtODQ4Zi1kYjdkODIyNTliOTMiLCJyb2xlIjoiYWRtaW4iLCJkZXZpY2VUb2tlbiI6InN0cmluZyIsImRldmljZVR5cGUiOiJzdHJpbmciLCJuYmYiOjE2ODI1OTAyODksImV4cCI6MTg0MDQ0MzA4OSwiaWF0IjoxNjgyNTkwMjg5fQ.1nKkJAoyVd_2vo_vP-4Mn2kRBHhLnPIIDOI82WY_B0s"
 
 def upload_file(image_path):
-    url = 'https://staging-api.vivifyhealthcare.com/ImageUpload/DocUpload/'
-    # url  = "http://127.0.0.1:8008/pdf/gen/"
+    # url = 'https://staging-api.vivifyhealthcare.com/ImageUpload/DocUpload/'
+    # url  = "http://invoicesappapi-prod.us-east-2.elasticbeanstalk.com/api/Management/UploadPdfFile"
     headers =  Imageheaders = {
         'Accept-Language': 'en-US',
         'Authorization': f'Bearer {token}'
