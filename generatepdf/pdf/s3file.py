@@ -3,7 +3,7 @@ token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOiIzMTFkMWZlOC1lZDQwLT
 
 def upload_file(image_path):
     # url = 'https://staging-api.vivifyhealthcare.com/ImageUpload/DocUpload/'
-    # url  = "http://invoicesappapi-prod.us-east-2.elasticbeanstalk.com/api/Management/UploadPdfFile"
+     url  = "http://invoicesappapi-prod.us-east-2.elasticbeanstalk.com/api/Management/UploadPdfFile"
     headers =  Imageheaders = {
         'Accept-Language': 'en-US',
         'Authorization': f'Bearer {token}'
