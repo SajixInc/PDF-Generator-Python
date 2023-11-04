@@ -199,8 +199,9 @@ upload your HTML file and then you got response be like this:
 `` {"url":<s3bucket url>}``
 
 
-[Initial Update](https://vivifyhealthcare.com/tech-stack/pdf-generator-python-using-pdfkit/)
-[Update-1](https://vivifyhealthcare.com/tech-stack/pdf-generation-via-api/)
+- [Initial Update](https://vivifyhealthcare.com/tech-stack/pdf-generator-python-using-pdfkit/)
+
+- [Update-1](https://vivifyhealthcare.com/tech-stack/pdf-generation-via-api/)
 
  <p align="center">
 <img src="https://vivifyassets.s3.ap-south-1.amazonaws.com/cropped-vivify_login.png" margin_left="100"/>
