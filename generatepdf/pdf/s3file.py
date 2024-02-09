@@ -1,5 +1,5 @@
 import requests
-token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg4OTc4NzY0LCJqdGkiOiJhMWU5ZWE2ODU4Mzc0OWE3YjNiZDFlNjcxN2Q4MDhkNyIsInVzZXJfaWQiOjV9.O9Yyi4lTU8r40pqf8fyjzDLJNbR8S0yUrbRqF0Ww2Mc"
+token = "#######################################################################################"
 import boto3
 
 
